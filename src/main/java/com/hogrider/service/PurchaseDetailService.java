@@ -34,4 +34,10 @@ public class PurchaseDetailService {
     public void deleteByOrderId(String orderid){
         purchaseDetailDao.deleteAllByOrderid(orderid);
     }
+
+    @Modifying
+    @Transactional
+    public void updateInventoryByNameAndOrderid(Integer inventory, String orderid, String name){
+        purchaseDetailDao.updateDetailsByNameAndOrderid(inventory, orderid, name);
+    }
 }

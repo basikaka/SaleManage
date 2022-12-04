@@ -4,6 +4,7 @@ import com.hogrider.pojo.PurchaseDetail;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
@@ -39,9 +40,17 @@ class PurchaseDetailServiceTest {
     }
 
     @Test
-//    @Transactional
+    @Transactional
     void deleteByOrderId() {
         String orderid = "CXXX444";
         purchaseDetailService.deleteByOrderId(orderid);
+    }
+
+    @Test
+    void updateInventoryByNameAndOrderid() {
+        Integer inventory = 10;
+        String name = "喜羊羊";
+        String orderid = "CDDN20221029002";
+        purchaseDetailService.updateInventoryByNameAndOrderid(inventory, orderid, name );
     }
 }
