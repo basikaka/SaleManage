@@ -1,4 +1,4 @@
-package com.hogrider.controller;
+package com.hogrider.controller.purchase.order;
 
 
 import com.hogrider.pojo.Purchase;
