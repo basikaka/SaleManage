@@ -1,4 +1,4 @@
-package com.hogrider.controller;
+package com.hogrider.controller.purchase.inbound;
 
 import com.hogrider.pojo.InboundProduct;
 import com.hogrider.pojo.PurchaseDetail;
@@ -16,12 +16,12 @@ public class InboundProductController {
     @Autowired
     private InboundProductService inboundProductService;
 
-    @PostMapping("/inbound/add")
+    @PostMapping("/inbound/detail/add")
     public String saveOrderDetail(@RequestBody List<InboundProduct> inboundProductList){
         return inboundProductService.saveInboundProduct(inboundProductList).toString();
     }
 
-    @PostMapping("/inbound/update")
+    @PostMapping("/inbound/detail/update")
     public void updateInventoryByNameAndInboundid(@RequestBody List<InboundProduct> inboundProductList){
         inboundProductService.updateInventoryByNameAndInboundid(inboundProductList);
     }
