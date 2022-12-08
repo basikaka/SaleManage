@@ -14,6 +14,11 @@ public class InboundController {
     @Autowired
     private InboundService inboundService;
 
+    @GetMapping("/inbound")
+    public List<Inbound> listInbound(){
+        return inboundService.listInbound();
+    }
+
     @PostMapping("/inbound/add")
     public void saveInbound(@RequestBody Inbound inbound) {
         inboundService.saveInbound(inbound);

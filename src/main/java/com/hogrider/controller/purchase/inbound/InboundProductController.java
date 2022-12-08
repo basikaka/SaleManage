@@ -26,4 +26,9 @@ public class InboundProductController {
         inboundProductService.updateInventoryByNameAndInboundid(inboundProductList);
     }
 
+    @GetMapping("/inbound/detail/{inboundid}")
+    public List<InboundProduct> getInboundProduct(@PathVariable("inboundid") String inboundid){
+        return inboundProductService.findByInboundid(inboundid);
+    }
+
 }

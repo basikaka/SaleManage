@@ -32,4 +32,8 @@ public class InboundProductService {
             inboundProductDao.updateInventoryByNameAndInboundid(inventory, inboundid, name);
         }
     }
+
+    public List<InboundProduct> findByInboundid(String inboundid) {
+        return   inboundProductDao.findByInboundid(inboundid);
+    }
 }

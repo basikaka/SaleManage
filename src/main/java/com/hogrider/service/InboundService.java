@@ -12,6 +12,10 @@ public class InboundService {
     @Autowired
     private InboundDao inboundDao;
 
+    public List<Inbound> listInbound(){
+        return inboundDao.findAll();
+    }
+
     public void saveInbound(Inbound inbound) {
         inboundDao.save(inbound);
     }

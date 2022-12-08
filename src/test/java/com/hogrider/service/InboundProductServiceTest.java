@@ -54,4 +54,10 @@ class InboundProductServiceTest {
         inboundProductList.add(inboundProduct);
         inboundProductService.updateInventoryByNameAndInboundid(inboundProductList);
     }
+
+    @Test
+    void findByInboundid() {
+        String inboundid = "RKDD20221206328838";
+        System.out.println(inboundProductService.findByInboundid(inboundid));
+    }
 }
