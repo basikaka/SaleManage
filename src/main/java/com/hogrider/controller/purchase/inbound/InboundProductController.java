@@ -31,4 +31,9 @@ public class InboundProductController {
         return inboundProductService.findByInboundid(inboundid);
     }
 
+    @PostMapping("/inbound/detail/update/status")
+    public void updateStatusByInboundid(@RequestBody List<InboundProduct> inboundProductList){
+        inboundProductService.updateStatusByInboundid(inboundProductList);
+    }
+
 }

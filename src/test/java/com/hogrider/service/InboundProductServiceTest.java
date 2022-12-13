@@ -60,4 +60,12 @@ class InboundProductServiceTest {
         String inboundid = "RKDD20221206328838";
         System.out.println(inboundProductService.findByInboundid(inboundid));
     }
+
+    @Test
+    @Transactional
+    void updateStatusByInboundid() {
+//        String status = "待审核";
+//        String inboundid = "RKDD20221206328838";
+//        inboundProductService.updateStatusByInboundid(status, inboundid);
+    }
 }

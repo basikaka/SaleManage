@@ -45,4 +45,12 @@ class InboundServiceTest {
         inboundService.saveInbound(inbound);
 
     }
+
+    @Test
+    @Transactional
+    void updateStatusByInboundid() {
+//        String status = "待审核";
+//        String inboundid = "RKDD20221206328838";
+//        inboundService.updateStatusByInboundid(status, inboundid);
+    }
 }

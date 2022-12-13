@@ -23,4 +23,9 @@ public class InboundController {
     public void saveInbound(@RequestBody Inbound inbound) {
         inboundService.saveInbound(inbound);
     }
+
+    @PostMapping("/inbound/update/status")
+    public void updateStatusByInboundid(@RequestBody Inbound inbound){
+        inboundService.updateStatusByInboundid(inbound);
+    }
 }

@@ -84,4 +84,11 @@ class PurchaseServiceTest {
         String rkstatus = "已完成";
         System.out.println(purchaseService.findOrderToInbound(finish, rkstatus));
     }
+
+    @Test
+    void updateRkstatusByOrderid() {
+//        String rkstatus = "进行中";
+//        String ponum = "CDDN20221029002";
+//        purchaseService.updateRkstatusByOrderid(rkstatus, ponum);
+    }
 }

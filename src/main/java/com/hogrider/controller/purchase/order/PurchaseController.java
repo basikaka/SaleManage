@@ -79,4 +79,9 @@ public class PurchaseController {
         String rkstatus = "已完成";
         return purchaseService.findOrderToInbound( finish, rkstatus);
     }
+
+    @PostMapping("/order/update/rkstatus")
+    public void updateStatusByPonum(@RequestBody Purchase purchase){
+        purchaseService.updateRkstatusByOrderid(purchase);
+    }
 }

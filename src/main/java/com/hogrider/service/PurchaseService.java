@@ -45,4 +45,12 @@ public class PurchaseService {
     public List<Purchase> findOrderToInbound( String finish, String rkstatus) {
         return purchaseDao.findPurchaseByFinishAndRkstatusNot( finish, rkstatus);
     }
+
+    @Modifying
+    @Transactional
+    public void updateRkstatusByOrderid(Purchase purchase){
+        String status = purchase.getRkstatus();
+        String ponum = purchase.getPonum();
+        purchaseDao.updateRkstatusByOrderid(status, ponum);
+    }
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.PrintWriter;
+import java.sql.Timestamp;
 import java.util.List;
 
 @Service
@@ -35,5 +36,16 @@ public class InboundProductService {
 
     public List<InboundProduct> findByInboundid(String inboundid) {
         return   inboundProductDao.findByInboundid(inboundid);
+    }
+
+    @Modifying
+    @Transactional
+    public void updateStatusByInboundid(List<InboundProduct> inboundProductList) {
+        for (InboundProduct item : inboundProductList){
+            String status = item.getStatus();
+            String inboundid = item.getInboundid();
+            Timestamp viewtime = item.getViewtime();
+            inboundProductDao.updateStatusByInboundid( status, viewtime, inboundid);
+        }
     }
 }
