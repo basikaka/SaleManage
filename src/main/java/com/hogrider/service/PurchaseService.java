@@ -22,7 +22,7 @@ public class PurchaseService {
     }
 
     public Purchase findByPurchaseNum( String number){
-        return purchaseDao.findPurchaseByPonum( number );
+        return purchaseDao.findPurchaseByOrderid( number );
     }
 
     public Page<Purchase> findAllByPage(Pageable pageable){
@@ -39,7 +39,7 @@ public class PurchaseService {
     @Modifying
     @Transactional
     public void deleteByPonum( String ponum){
-        purchaseDao.deleteAllByPonum(ponum);
+        purchaseDao.deleteAllByOrderid(ponum);
     }
 
     public List<Purchase> findOrderToInbound( String finish, String rkstatus) {
@@ -50,7 +50,7 @@ public class PurchaseService {
     @Transactional
     public void updateRkstatusByOrderid(Purchase purchase){
         String status = purchase.getRkstatus();
-        String ponum = purchase.getPonum();
+        String ponum = purchase.getOrderid();
         purchaseDao.updateRkstatusByOrderid(status, ponum);
     }
 }

@@ -40,7 +40,7 @@ class PurchaseServiceTest {
     void saveOrder() {
         Purchase purchase = new Purchase();
         purchase.setCreatetime(Timestamp.valueOf("2022-10-11 12:00:00"));
-        purchase.setPonum("CCCC2222");
+        purchase.setOrderid("CCCC2222");
         purchase.setSupname("天堂伞有限公司");
         purchase.setFinish("未审核");
 
@@ -69,7 +69,7 @@ class PurchaseServiceTest {
         String finish = "提交审核";
         Purchase purchase = new Purchase();
         purchase.setId(Id);
-        purchase.setPonum(ponum);
+        purchase.setOrderid(ponum);
         purchase.setSupname(supname);
         purchase.setCreatetime(createtime);
         purchase.setViewtime(viewtime);

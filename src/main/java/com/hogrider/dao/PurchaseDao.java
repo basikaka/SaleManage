@@ -12,12 +12,12 @@ import java.util.List;
 @Repository
 public interface PurchaseDao extends JpaRepository<Purchase, Integer> {
 
-    Purchase findPurchaseByPonum( String num);
-    void deleteAllByPonum(String num);
+    Purchase findPurchaseByOrderid( String num);
+    void deleteAllByOrderid(String num);
     // 通过采购订单的审核状态查找，准备给
     List<Purchase> findPurchaseByFinishAndRkstatusNot(String finish, String rkstatus);
 
     @Modifying(flushAutomatically = true,clearAutomatically = true)
-    @Query(value = "update purchaseorder pcd set pcd.rkstatus = ?1 where pcd.ponum = ?2", nativeQuery = true)
-    public void updateRkstatusByOrderid(String status, String ponum);
+    @Query(value = "update purchaseorder pcd set pcd.rkstatus = ?1 where pcd.orderid = ?2", nativeQuery = true)
+    public void updateRkstatusByOrderid(String status, String orderid);
 }
