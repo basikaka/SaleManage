@@ -21,10 +21,10 @@ public class Purchase {
     private String supname;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Timestamp createtime; // 创建订单的时间
+    private Timestamp ctime; // 创建订单的时间
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Timestamp viewtime; // 审核订单的时间
+    private Timestamp vtime; // 审核订单的时间
 
     private String finish; // 订单完成情况：未审核，已审核，取消
 

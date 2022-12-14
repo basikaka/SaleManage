@@ -39,7 +39,7 @@ class PurchaseServiceTest {
     @Transactional
     void saveOrder() {
         Purchase purchase = new Purchase();
-        purchase.setCreatetime(Timestamp.valueOf("2022-10-11 12:00:00"));
+        purchase.setCtime(Timestamp.valueOf("2022-10-11 12:00:00"));
         purchase.setOrderid("CCCC2222");
         purchase.setSupname("天堂伞有限公司");
         purchase.setFinish("未审核");
@@ -58,7 +58,7 @@ class PurchaseServiceTest {
     @Transactional
     void updateOrder() {
         /*
-        INSERT INTO `salemanage`.`purchaseorder` (`id`, `ponum`, `supname`, `createtime`, `viewtime`, `finish`) VALUES (7, 'CDDN20221129001', '天堂伞有限公司', '2022-11-29 00:00:00', NULL, '未审核');
+        INSERT INTO `salemanage`.`purchaseorder` (`id`, `ponum`, `supname`, `createtime`, `vtime`, `finish`) VALUES (7, 'CDDN20221129001', '天堂伞有限公司', '2022-11-29 00:00:00', NULL, '未审核');
          */
 
         Integer Id = 7;
@@ -71,8 +71,8 @@ class PurchaseServiceTest {
         purchase.setId(Id);
         purchase.setOrderid(ponum);
         purchase.setSupname(supname);
-        purchase.setCreatetime(createtime);
-        purchase.setViewtime(viewtime);
+        purchase.setCtime(createtime);
+        purchase.setVtime(viewtime);
         purchase.setFinish(finish);
 
         purchaseService.updateOrder(purchase);

@@ -27,10 +27,10 @@ public class InboundProduct {
     private Integer inventory; // 已经入库的数量
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Timestamp createtime; // 创建订单的时间
+    private Timestamp ctime; // 创建订单的时间
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Timestamp viewtime; // 修改状态时间
+    private Timestamp vtime; // 修改状态时间
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Timestamp ftime; // 最终完成审核的时间

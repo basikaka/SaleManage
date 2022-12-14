@@ -29,8 +29,8 @@ class InboundProductServiceTest {
         inboundProduct.setProductinfo("750ml");
         inboundProduct.setInprice(BigDecimal.valueOf(80));
         inboundProduct.setInventory(4);
-        inboundProduct.setCreatetime(Timestamp.valueOf("2022-12-01 12:13:14"));
-        inboundProduct.setViewtime(null);
+        inboundProduct.setCtime(Timestamp.valueOf("2022-12-01 12:13:14"));
+        inboundProduct.setVtime(null);
         inboundProduct.setFtime(null);
         inboundProduct.setStatus("未开始");
 

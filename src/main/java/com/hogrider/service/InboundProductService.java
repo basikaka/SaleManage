@@ -44,7 +44,7 @@ public class InboundProductService {
         for (InboundProduct item : inboundProductList){
             String status = item.getStatus();
             String inboundid = item.getInboundid();
-            Timestamp viewtime = item.getViewtime();
+            Timestamp viewtime = item.getVtime();
             inboundProductDao.updateStatusByInboundid( status, viewtime, inboundid);
         }
     }
