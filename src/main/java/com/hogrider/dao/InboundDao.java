@@ -12,6 +12,6 @@ import java.sql.Timestamp;
 public interface InboundDao extends JpaRepository<Inbound, Integer> {
 
     @Modifying(clearAutomatically = true, flushAutomatically = true)
-    @Query(value = "update inbound ib set ib.status = ?1, ib.vtime = ?2 where ib.inboundid = ?3", nativeQuery = true)
-    void updateStatusByInboundid(String status, Timestamp vtime, String inboundid);
+    @Query(value = "update inbound ib set ib.status = ?1, ib.vtime = ?2, ib.ftime = ?3 where ib.inboundid = ?4", nativeQuery = true)
+    void updateStatusByInboundid(String status, Timestamp vtime, Timestamp ftime, String inboundid);
 }

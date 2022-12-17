@@ -22,6 +22,7 @@ public class PurchaseDetail {
     private String productinfo; // 规格
     private BigDecimal inprice; // 采购单价
     private Integer number; // 采购单采购商品数量
-    private Integer inventory; // 已经入库的数量
+    private Integer inventory; // 未审核拟入库的数量
+    private Integer finventory; // 审核通过入库的数量（入库单已审核完成）
 
 }

@@ -32,16 +32,12 @@ public class PurchaseDetailController {
         purchaseDetailService.deleteByOrderId( orderid );
     }
 
-    @PostMapping("/order/detail/inbound/update")
-    public void updateInventoryByOrderidAndName(@RequestBody List<PurchaseDetail> purchaseDetailList) {
-        for (PurchaseDetail item : purchaseDetailList
-             ) {
-            Integer inventory = item.getInventory();
-            String orderid = item.getOrderid();
-            String name = item.getMerchandise();
-            // System.out.println(name + ": " + inventory + " " + orderid);
-            purchaseDetailService.updateInventoryByNameAndOrderid(inventory, orderid, name);
-        }
+    @PostMapping("/order/detail/update")
+    public void updateDetailByOrderidAndName(@RequestBody List<PurchaseDetail> purchaseDetailList) {
+        purchaseDetailService.updateDetailByOrderidAndName(purchaseDetailList);
     }
+
+    // 采购单每样商品的详细记录，统一更新接口
+//    @PostMapping("/order/detail/update")
 
 }

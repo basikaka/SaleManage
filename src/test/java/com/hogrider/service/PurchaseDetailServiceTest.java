@@ -48,9 +48,9 @@ class PurchaseDetailServiceTest {
 
     @Test
     void updateInventoryByNameAndOrderid() {
-        Integer inventory = 10;
-        String name = "喜羊羊";
-        String orderid = "CDDN20221029002";
-        purchaseDetailService.updateInventoryByNameAndOrderid(inventory, orderid, name );
+//        Integer inventory = 10;
+//        String name = "喜羊羊";
+//        String orderid = "CDDN20221029002";
+//        purchaseDetailService.updateInventoryByNameAndOrderid(inventory, orderid, name );
     }
 }

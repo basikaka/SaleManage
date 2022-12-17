@@ -37,7 +37,17 @@ public class PurchaseDetailService {
 
     @Modifying
     @Transactional
-    public void updateInventoryByNameAndOrderid(Integer inventory, String orderid, String name){
-        purchaseDetailDao.updateDetailsByNameAndOrderid(inventory, orderid, name);
+    public void updateDetailByOrderidAndName(List<PurchaseDetail> purchaseDetailList) {
+        for (PurchaseDetail item : purchaseDetailList) {
+            Integer inventory = item.getInventory();
+            Integer finventory = item.getFinventory();
+            String orderid = item.getOrderid();
+            String name = item.getMerchandise();
+            // System.out.println(name + ": " + inventory + " " + orderid);
+            if (finventory == null){
+                finventory = 0;
+            }
+            purchaseDetailDao.updateDetailByOrderidAndName(inventory, finventory, orderid, name);
+        }
     }
 }

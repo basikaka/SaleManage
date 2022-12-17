@@ -16,7 +16,11 @@ public interface PurchaseDetailDao extends JpaRepository<PurchaseDetail, Integer
     void deleteAllByOrderid(String orderid);
 
 
+//    @Modifying(clearAutomatically = true, flushAutomatically = true)
+//    @Query(value = "update purchasedetail pcd set pcd.inventory = ?1 where pcd.orderid=?2 and pcd.merchandise = ?3", nativeQuery = true)
+//    void updateDetailsByNameAndOrderid(Integer inventory, String orderid, String name);
+
     @Modifying(clearAutomatically = true, flushAutomatically = true)
-    @Query(value = "update purchasedetail pcd set pcd.inventory = ?1 where pcd.orderid=?2 and pcd.merchandise = ?3", nativeQuery = true)
-    void updateDetailsByNameAndOrderid(Integer inventory, String orderid, String name);
+    @Query(value = "update purchasedetail pcd set pcd.inventory = ?1, pcd.finventory = ?2 where pcd.orderid = ?3 and pcd.merchandise = ?4", nativeQuery = true)
+    void updateDetailByOrderidAndName(Integer inventory, Integer finventory, String orderid, String name);
 }

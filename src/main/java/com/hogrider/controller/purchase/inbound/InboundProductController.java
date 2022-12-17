@@ -33,7 +33,7 @@ public class InboundProductController {
 
     @PostMapping("/inbound/detail/update/status")
     public void updateStatusByInboundid(@RequestBody List<InboundProduct> inboundProductList){
-        inboundProductService.updateStatusByInboundid(inboundProductList);
+        inboundProductService.updateStatusByInboundidAndName(inboundProductList);
     }
 
 }

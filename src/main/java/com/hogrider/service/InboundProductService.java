@@ -40,12 +40,14 @@ public class InboundProductService {
 
     @Modifying
     @Transactional
-    public void updateStatusByInboundid(List<InboundProduct> inboundProductList) {
+    public void updateStatusByInboundidAndName(List<InboundProduct> inboundProductList) {
         for (InboundProduct item : inboundProductList){
             String status = item.getStatus();
             String inboundid = item.getInboundid();
             Timestamp viewtime = item.getVtime();
-            inboundProductDao.updateStatusByInboundid( status, viewtime, inboundid);
+            Timestamp ftime = item.getFtime();
+            String mechandise = item.getMerchandise();
+            inboundProductDao.updateStatusByInboundidAndName( status, viewtime, ftime, inboundid, mechandise);
         }
     }
 }

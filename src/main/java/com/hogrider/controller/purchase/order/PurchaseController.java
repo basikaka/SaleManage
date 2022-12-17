@@ -81,7 +81,7 @@ public class PurchaseController {
     }
 
     @PostMapping("/order/update/rkstatus")
-    public void updateStatusByPonum(@RequestBody Purchase purchase){
+    public void updateRkstatusByOrderid(@RequestBody Purchase purchase){
         purchaseService.updateRkstatusByOrderid(purchase);
     }
 }

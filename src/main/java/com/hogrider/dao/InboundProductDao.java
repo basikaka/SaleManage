@@ -20,6 +20,6 @@ public interface InboundProductDao extends JpaRepository<InboundProduct, Integer
     List<InboundProduct> findByInboundid(String inboundid);
 
     @Modifying(clearAutomatically = true, flushAutomatically = true)
-    @Query(value = "update inboundproduct ibp set ibp.status = ?1 , ibp.vtime = ?2 where ibp.inboundid = ?3", nativeQuery = true)
-    void updateStatusByInboundid(String status, Timestamp viewtime, String inboundid);
+    @Query(value = "update inboundproduct ibp set ibp.status = ?1 , ibp.vtime = ?2, ibp.ftime = ?3 where ibp.inboundid = ?4 and ibp.merchandise = ?5", nativeQuery = true)
+    void updateStatusByInboundidAndName(String status, Timestamp viewtime, Timestamp ftime, String inboundid, String merchandise);
 }

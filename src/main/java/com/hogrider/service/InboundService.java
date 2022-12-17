@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -29,7 +30,8 @@ public class InboundService {
 //        inboundDao.updateStatusByInboundid(status, inboundid);
         String status = inbound.getStatus();
         Timestamp vtime = inbound.getVtime();
+        Timestamp ftime = inbound.getFtime();
         String inboundid = inbound.getInboundid();
-        inboundDao.updateStatusByInboundid(status, vtime, inboundid);
+        inboundDao.updateStatusByInboundid(status, vtime, ftime, inboundid);
     }
 }
