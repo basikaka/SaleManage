@@ -41,13 +41,20 @@ public class InboundProductService {
     @Modifying
     @Transactional
     public void updateStatusByInboundidAndName(List<InboundProduct> inboundProductList) {
+//        System.out.println("--------=======----------");
+//        System.out.println(inboundProductList);
         for (InboundProduct item : inboundProductList){
             String status = item.getStatus();
             String inboundid = item.getInboundid();
             Timestamp viewtime = item.getVtime();
             Timestamp ftime = item.getFtime();
             String mechandise = item.getMerchandise();
-            inboundProductDao.updateStatusByInboundidAndName( status, viewtime, ftime, inboundid, mechandise);
+            if ( status.toString().equals("已删除") ){
+                inboundProductDao.updateStatusByInboundid(status, viewtime, ftime, inboundid);
+                System.out.println(status);
+            }else {
+                inboundProductDao.updateStatusByInboundidAndName(status, viewtime, ftime, inboundid, mechandise);
+            }
         }
     }
 }

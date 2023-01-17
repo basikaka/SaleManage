@@ -22,4 +22,11 @@ public interface InboundProductDao extends JpaRepository<InboundProduct, Integer
     @Modifying(clearAutomatically = true, flushAutomatically = true)
     @Query(value = "update inboundproduct ibp set ibp.status = ?1 , ibp.vtime = ?2, ibp.ftime = ?3 where ibp.inboundid = ?4 and ibp.merchandise = ?5", nativeQuery = true)
     void updateStatusByInboundidAndName(String status, Timestamp viewtime, Timestamp ftime, String inboundid, String merchandise);
+
+    // 删除入库单时，标记所有拟入库的商品的状态为“已删除”
+    @Modifying(clearAutomatically = true, flushAutomatically = true)
+    @Query(value = "update inboundproduct ibp set ibp.status = ?1 , ibp.vtime = ?2, ibp.ftime = ?3 where ibp.inboundid = ?4", nativeQuery = true)
+    void updateStatusByInboundid(String status, Timestamp viewtime, Timestamp ftime, String inboundid);
+
+
 }
